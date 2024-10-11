@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Ciphers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Classical Ciphers</h1>
+        <div class="input-group select">
+            <label for="cipherType">Select Cipher :</label>
+            <select id="cipherType">
+                <option value="vigenere">Vigenere Cipher (mengenkripsi huruf alfabet)</option>
+                <option value="extendedVigenere">Extended Vigenere Cipher (256 karakter ASCII)</option>
+                <option value="playfair">Playfair Cipher (matriks 5x5)</option>
+                <option value="enigma">Enigma Cipher</option>
+                <option value="otp">One-Time Pad</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="inputText">Input Text :</label>
+            <textarea id="inputText" rows="5" placeholder="Masukkan text atau mengunggah file"></textarea>
+        </div>
+        <div class="input-group">
+            <label for="key">Key:</label>
+            <input type="text" id="key" placeholder="Masukkan kunci enkripsi">
+        </div>
+        <div class="btn">
+            <button class="btn-sec" onclick="encrypt()">Encrypt</button>
+            <button class="btn-sec" onclick="decrypt()">Decrypt</button>
+            <input type="file" id="fileInput" style="display: none">
+            <button class="btn-sec" onclick="document.getElementById('fileInput').click()">Upload File</button>
+        </div>
+        <h3>Output:</h3>
+        <div class="output">
+            <p id="outputText"></p>
+        </div>
+        <button onclick="downloadOutput()">Download Output</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
